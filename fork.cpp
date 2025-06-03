@@ -11,6 +11,11 @@ int main()
 {
     //// Create a array on heap ----> can not share memory !!!!!!
     //// Because both parent process and child process have its own address space
+    
+    // Copy On Write: parent and child process share the same physical memory, until one of them write to the memory page, alloc a new page
+    // and then copy the orignal data and wirte into its
+    // ---> until parent process or child process write, they share the same physical memory  (Read Only !!!!)
+
     // int* nums = new int[10];
     // for(int i = 0; i < 10; i++)
     // {
